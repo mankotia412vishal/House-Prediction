@@ -24,6 +24,17 @@ def predict():
     prediction=model.predict(new_data)
     return jsonify(prediction[0])
 
+@app.route('/predict_file',methods=['POST'])
+def predict_file():
+    data=[float(x) for x in request.form.values()]
+    final_input=scaler.transform(np.array(data).reshape(1,-1))
+    print(final_input)
+    prediction=model.predict(final_input)
+    return render_template('index.html',prediction_text='The predicted House price  is {}'.format(prediction[0]))
+
+
+    
+
 if __name__ == '__main__':
     app.run(port=5000,debug=True)
     
