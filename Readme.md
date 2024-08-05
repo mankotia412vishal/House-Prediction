@@ -19,3 +19,7 @@ python -m venv env_name
 env_name\Scripts\activate
 ```
 
+## Note
+
+ - This Project basically I have created for the learning purpose.I have used the Boston House Price Dataset for the prediction of the house price using Linear Regression.
+  
